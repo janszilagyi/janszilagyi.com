@@ -34,6 +34,7 @@
   .results{padding-bottom:0} /* nasleduje tmavý Coaching – oddeľuje ich šampanská linka */
   .results .wrap::after{content:"";display:block;height:1px;background:rgba(191,164,116,.6);margin-top:44px}
   .about p:last-child{margin-bottom:0}
+  .about,.contact{padding-top:36px} /* obsah bližšie k hornej hranici sekcie */
 
   /* Buttons */
   .btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -124,6 +125,7 @@
   @media (min-width:900px){
     section{padding:72px 0}
     .results .wrap::after{margin-top:56px}
+    .about,.contact{padding-top:48px}
     .hero{background:var(--black);align-items:center}
     .hero img{left:auto;right:0;width:50%;object-position:center 20%}
     .hero-band{width:50%;max-width:none;margin:0;padding:0 56px 0 max(56px,calc((100vw - 1080px)/2));background:transparent}
