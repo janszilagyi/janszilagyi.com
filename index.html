@@ -30,11 +30,11 @@
   .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:500}
   .serif{font-family:var(--serif)}
   .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 22px}
-  section{padding:56px 0}
+  section{padding:44px 0} /* jednotný rytmus: 44 px nad aj pod každou šampanskou linkou */
   .results{padding-bottom:0} /* nasleduje tmavý Coaching – oddeľuje ich šampanská linka */
   .results .wrap::after{content:"";display:block;height:1px;background:rgba(191,164,116,.6);margin-top:44px}
   .about p:last-child{margin-bottom:0}
-  .about,.contact{padding-top:36px} /* obsah bližšie k hornej hranici sekcie */
+  .about,.contact{padding-top:0} /* linka je hneď na začiatku sekcie */
 
   /* Buttons */
   .btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -49,7 +49,7 @@
   .hero{position:relative;padding:0;background:var(--deep)}
   .hero picture{display:block}
   .hero img{display:block;width:100%;height:auto;max-height:74svh;object-fit:cover;object-position:center top;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%)}
-  .hero-band{position:relative;z-index:2;width:100%;margin-top:-72px;padding:0 22px 44px}
+  .hero-band{position:relative;z-index:2;width:100%;margin-top:-72px;padding:0 22px 8px}
   .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,10vw,64px);line-height:1.02;margin:8px 0 6px}
   .hero .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(17px,4.6vw,22px);color:var(--accent);margin-bottom:18px}
 
@@ -128,10 +128,11 @@
 
   /* DESKTOP */
   @media (min-width:900px){
-    section{padding:72px 0}
+    section{padding:56px 0}
     .results .wrap::after{margin-top:56px}
-    .about,.contact{padding-top:48px}
-    .hero{min-height:100svh;display:flex;align-items:center}
+    .about,.contact{padding-top:0}
+    .about .wrap::before,.contact .wrap::before{margin-bottom:56px}
+    .hero{min-height:90svh;display:flex;align-items:center}
     /* desktop: široká fotka (Higgsfield outpaint 16:9) cez celú šírku, vľavo a dole sa rozpúšťa do čiernej */
     .hero picture{position:absolute;inset:0}
     .hero img{position:absolute;top:0;bottom:0;left:auto;right:0;width:72%;height:100%;max-height:none;object-position:50% 30%;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 22%);mask-composite:intersect}
