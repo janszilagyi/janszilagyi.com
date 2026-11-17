@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ján Szilágyi – Natural Athlete, Coach, Mentor | Dubai</title>
+<meta name="description" content="Ján Szilágyi – natural bodybuilder, coach and mentor in Dubai, UAE. Discipline. System. Results.">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:title" content="Ján Szilágyi – Natural Athlete, Coach, Mentor">
+<meta property="og:description" content="Discipline. System. Results. Dubai, UAE.">
+<meta property="og:image" content="images/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0B0B0C; --deep:#000000; --white:#FFFFFF;
+    --accent:#BFA474;        /* champagne – only key words, lines, main button */
+    --accent-dark:#735C38;   /* accent text on light backgrounds */
+    --light:#F7F5F2; --ink:#26262A; --muted:#55555A; --soft:#C9C9CC;
+    --serif:'Bodoni Moda', Georgia, serif;
+    --sans:'Inter', system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--black);color:var(--white);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .serif{font-family:var(--serif)}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 22px}
+  section{padding:64px 0}
+
+  /* Buttons */
+  .btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .btn{display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:6px;font-size:15px;font-weight:500;text-decoration:none;transition:opacity .2s}
+  .btn:hover{opacity:.85}
+  .btn-primary{background:var(--accent);color:var(--black)}
+  .btn-outline{border:1px solid var(--white);color:var(--white)}
+  .btn-outline-dark{border:1px solid var(--ink);color:var(--ink)}
+
+  /* HERO – M1: full-screen photo, dark band at bottom */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:0;background:#2a2a2e}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+  .hero-band{position:relative;width:100%;background:rgba(11,11,12,.82);padding:22px 22px calc(22px + env(safe-area-inset-bottom))}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,10vw,64px);line-height:1.02;margin:8px 0 6px}
+  .hero .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(17px,4.6vw,22px);color:var(--accent);margin-bottom:18px}
+
+  /* RESULTS */
+  .results{background:var(--deep)}
+  .results h2,.coaching h2,.about h2,.contact h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,7vw,44px);line-height:1.1;margin:10px 0 28px}
+  .result{border-top:1px solid rgba(191,164,116,.35);padding:18px 0}
+  .result:last-of-type{border-bottom:1px solid rgba(191,164,116,.35)}
+  .result .title{font-family:var(--serif);font-size:clamp(24px,6vw,32px);color:var(--accent);line-height:1.15}
+  .result .meta{font-size:14px;color:var(--soft);margin-top:4px}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
+  .gallery figure{aspect-ratio:4/5;background:#1c1c1f;overflow:hidden;border-radius:4px}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,opacity .3s}
+  .gallery a:hover img{transform:scale(1.04);opacity:.9}
+  .ig-head{margin-top:52px}
+  .ig-title{font-family:var(--serif);font-style:italic;font-size:clamp(22px,5.6vw,30px);line-height:1.2;margin-top:8px}
+  .gallery.ig{grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px}
+  .ig-follow{margin-top:18px;width:100%}
+  .gallery.ig figure{position:relative}
+  /* Jednotný šampanský tón pre IG príspevky; po prejdení myšou plná farba */
+  .gallery.ig img{filter:grayscale(1) sepia(.55) brightness(.8) contrast(1.1);transition:filter .5s ease,transform .5s ease}
+  .gallery.ig a:hover img,.gallery.ig a:focus-visible img{filter:none}
+  .ig-badge{position:absolute;top:8px;right:8px;z-index:1;font-size:11px;color:var(--white);background:rgba(11,11,12,.55);border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center}
+
+  /* COACHING */
+  .coaching{background:var(--black)}
+  .pillar{padding:22px 0;border-top:1px solid rgba(255,255,255,.12)}
+  .pillar h3{font-family:var(--sans);font-size:13px;letter-spacing:.22em;font-weight:500;color:var(--accent);margin-bottom:8px}
+  .pillar p{font-family:var(--serif);font-size:clamp(20px,5.2vw,26px);line-height:1.3}
+  .link-cta{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-size:16px;font-weight:500;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:3px}
+
+  /* ABOUT */
+  .about{background:var(--light);color:var(--ink)}
+  .about .label{color:var(--accent-dark)}
+  .about p{font-size:18px;line-height:1.7;color:var(--ink);margin-bottom:14px;max-width:620px}
+  .about p:first-of-type{font-family:var(--serif);font-size:clamp(22px,5.6vw,28px);line-height:1.35}
+  .about em{color:var(--accent-dark)}
+
+  /* CONTACT */
+  .contact{background:var(--black)}
+  .contact .wrap{text-align:center}
+  .contact .btns{grid-template-columns:1fr;max-width:420px;margin:0 auto}
+  .contact .email{margin-top:22px;font-size:15px;color:var(--soft)}
+  .contact .place{margin-top:24px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .contact .email a{color:var(--white)}
+  footer a{color:inherit;text-decoration:none}
+  footer a:hover{color:var(--accent)}
+  footer{background:var(--deep);color:#8a8a8f;font-size:13px;text-align:center;padding:26px 22px calc(26px + env(safe-area-inset-bottom))}
+
+  /* COACHING VIDEO LOOP (Higgsfield) – if the file is missing, the section stays black */
+  .coaching{position:relative;overflow:hidden}
+  .coaching .bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .coaching::after{content:"";position:absolute;inset:0;background:rgba(11,11,12,.72);z-index:1}
+  .coaching .wrap{position:relative;z-index:2}
+
+  /* ANIMATIONS */
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .hero-band > *{opacity:0;animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+  .hero-band > *:nth-child(1){animation-delay:.15s}
+  .hero-band > *:nth-child(2){animation-delay:.3s}
+  .hero-band > *:nth-child(3){animation-delay:.5s}
+  .hero-band > *:nth-child(4){animation-delay:.7s}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.visible{opacity:1;transform:none}
+  .result{position:relative;border-top:none}
+  .result::before{content:"";position:absolute;top:0;left:0;height:1px;width:0;background:rgba(191,164,116,.6);transition:width 1.2s cubic-bezier(.2,.7,.2,1) .2s}
+  .result.visible::before{width:100%}
+  @media (prefers-reduced-motion: reduce){
+    .hero-band > *,.reveal{opacity:1;transform:none;animation:none;transition:none}
+    .result::before{width:100%;transition:none}
+    .coaching .bg-video{display:none}
+  }
+
+  /* DESKTOP */
+  @media (min-width:900px){
+    section{padding:96px 0}
+    .hero{background:var(--black);align-items:center}
+    .hero img{left:auto;right:0;width:50%;object-position:center 20%}
+    .hero-band{width:50%;max-width:none;margin:0;padding:0 56px 0 max(56px,calc((100vw - 1080px)/2));background:transparent}
+    .hero-band::after{content:"";display:block;width:56px;height:2px;background:var(--accent);margin-top:28px}
+    .btns{grid-template-columns:auto auto;justify-content:start}
+    .btn{min-width:170px}
+    .gallery.ig{grid-template-columns:repeat(6,1fr)}
+    .ig-follow{display:inline-flex;width:auto}
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+    .contact .btns{grid-template-columns:auto auto auto;max-width:none;justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<!--
+  ÚPRAVY PRED SPUSTENÍM (hľadaj tieto texty):
+  - 971586023655     → tvoje číslo WhatsApp bez + a medzier (napr. 971501234567)
+  - jan_szilagyi → tvoje meno na Instagrame bez @
+  FOTKY (priečinok images/, stačí nahradiť súbor rovnakým názvom):
+  - hero.jpg              → úvod, na výšku, pokojný spodok fotky
+  - result-1.jpg … 4.jpg  → pódium s medailou, pózovanie, s trofejou/diplomom, WNG 2026
+-->
+
+<!-- 1. ÚVOD -->
+<header class="hero">
+  <img src="images/hero.jpg" alt="Ján Szilágyi, natural bodybuilder" fetchpriority="high" onerror="this.style.display='none'">
+  <div class="hero-band">
+    <span class="label">Dubai, UAE</span>
+    <h1>Ján Szilágyi</h1>
+    <p class="tagline">Discipline. System. Results.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="https://wa.me/971586023655?text=Hi%20J%C3%A1n%2C%20I%20found%20you%20on%20your%20website." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-outline" href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- 2. VÝSLEDKY -->
+<section class="results" id="results">
+  <div class="wrap">
+    <span class="label">Results</span>
+    <h2>Proven on stage.</h2>
+    <div class="result">
+      <div class="title">World Vice Champion</div>
+      <div class="meta">Men's Athletic · World Natural Games, Dubai · 2025</div>
+    </div>
+    <div class="result">
+      <div class="title">European Champion</div>
+      <div class="meta">Men's Athletic · ICN European Games, Bratislava · 2026</div>
+    </div>
+    <div class="result">
+      <div class="title">3rd place</div>
+      <div class="meta">Men's Athletic · ICN World, Bali · 2026</div>
+    </div>
+    <div class="result">
+      <div class="title">2nd place</div>
+      <div class="meta">Men's Bodybuilding Rookie · World Natural Games, Dubai · 2026</div>
+    </div>
+    <div class="result">
+      <div class="title">4th place</div>
+      <div class="meta">Men's Athletic · World Natural Games, Dubai · 2026</div>
+    </div>
+    <!-- Instagram: živý feed z Behold (feeds.behold.so/uoag7CROTXPtqR7PiiMf), načíta sa skriptom dole.
+         Obrázky ig-1..6.jpg sú záloha, ak by feed nebol dostupný. -->
+    <div class="ig-head">
+      <span class="label">Instagram</span>
+      <p class="ig-title">Behind the results.</p>
+    </div>
+    <div class="gallery ig">
+      <a href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener"><figure><img src="images/ig-1.jpg" alt="Ján on the World Natural Games 2026 podium with the UAE flag" loading="lazy"></figure></a>
+      <a href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener"><figure><img src="images/ig-2.jpg" alt="Thank you post with 2nd and 4th place results" loading="lazy"></figure></a>
+      <a href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener"><figure><img src="images/ig-3.jpg" alt="Ján posing on stage at World Natural Games 2026" loading="lazy"></figure></a>
+      <a href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener"><figure><img src="images/ig-4.jpg" alt="Training two days before the competition" loading="lazy"></figure></a>
+      <a href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener"><figure><img src="images/ig-5.jpg" alt="Post-competition breakfast with medals" loading="lazy"></figure></a>
+      <a href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener"><figure><img src="images/ig-6.jpg" alt="Morning walk in Dubai during peak week" loading="lazy"></figure></a>
+    </div>
+    <a class="btn btn-primary ig-follow" href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener">Follow @jan_szilagyi</a>
+  </div>
+</section>
+
+<!-- 3. COACHING -->
+<section class="coaching" id="coaching">
+  <!-- Higgsfield slučky: video/coaching-loop-mobile.mp4 (9:16) a video/coaching-loop-desktop.mp4 (16:9), bez zvuku -->
+  <video class="bg-video" muted loop playsinline preload="none" aria-hidden="true"
+         data-mobile="video/coaching-loop-mobile.mp4" data-desktop="video/coaching-loop-desktop.mp4"></video>
+  <div class="wrap">
+    <span class="label">Coaching</span>
+    <h2>How I work.</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>DISCIPLINE</h3>
+        <p>Consistency beats intensity. Habits that hold up in your busiest weeks, not just the easy ones.</p>
+      </div>
+      <div class="pillar">
+        <h3>SYSTEM</h3>
+        <p>One plan, built for one person. Training, food and recovery that fit your life, not an internet template.</p>
+      </div>
+      <div class="pillar">
+        <h3>RESULTS</h3>
+        <p>Natural progress you can measure and keep, because you learn how to do it yourself.</p>
+      </div>
+    </div>
+    <a class="link-cta" href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener">Follow my journey →</a>
+  </div>
+</section>
+
+<!-- 4. O MNE -->
+<section class="about" id="about">
+  <div class="wrap">
+    <span class="label">About</span>
+    <h2>Ján Szilágyi</h2>
+    <p>I compete in natural bodybuilding, so every result I have is <em>earned the long way</em>.</p>
+    <p>Since 2019 I've coached people one-to-one, from complete beginners to performance-focused clients.</p>
+    <p>In 2026 I brought that discipline from Slovakia to Dubai.</p>
+    <p>I don't want clients who depend on me. I want them to own the system.</p>
+  </div>
+</section>
+
+<!-- 5. KONTAKT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="label">Contact</span>
+    <h2>Let's talk.</h2>
+    <div class="btns">
+      <a class="btn btn-primary" href="https://wa.me/971586023655?text=Hi%20J%C3%A1n%2C%20I%20found%20you%20on%20your%20website." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-outline" href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn btn-outline" href="mailto:jan@janszilagyi.com">E-mail</a>
+    </div>
+    <p class="place">Dubai, UAE</p>
+  </div>
+</section>
+</main>
+
+<footer><a href="mailto:jan@janszilagyi.com">jan@janszilagyi.com</a><br>© 2026 Ján Szilágyi</footer>
+
+<script>
+  // Plynulé zjavenie obsahu pri scrollovaní
+  document.querySelectorAll('section h2, section .label, .result, .gallery figure, .pillar, .link-cta, .about p, .contact .btns, .contact .email')
+    .forEach(function(el){ el.classList.add('reveal'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el, i){
+    el.style.transitionDelay = (el.matches('.pillar, .gallery figure') ? (i % 4) * 0.12 : 0) + 's';
+    io.observe(el);
+  });
+
+  // Živý Instagram feed cez Behold (JSON). Ak zlyhá, ostanú statické obrázky ig-1..6.
+  (function(){
+    var grid = document.querySelector('.gallery.ig');
+    if (!grid || !window.fetch) return;
+    fetch('https://feeds.behold.so/uoag7CROTXPtqR7PiiMf')
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(data){
+        var posts = (data.posts || []).slice(0, 6);
+        if (posts.length < 3) return;
+        grid.innerHTML = '';
+        posts.forEach(function(p){
+          var s = p.sizes || {};
+          var img = (s.medium && s.medium.mediaUrl) || (s.small && s.small.mediaUrl) || p.thumbnailUrl || p.mediaUrl;
+          if (!img) return;
+          var a = document.createElement('a');
+          a.href = p.permalink; a.target = '_blank'; a.rel = 'noopener';
+          var alt = (p.prunedCaption || 'Instagram post by @jan_szilagyi').split('\n')[0].slice(0, 120);
+          a.innerHTML = '<figure class="reveal visible">' +
+            (p.mediaType === 'VIDEO' ? '<span class="ig-badge" aria-hidden="true">▶</span>' : '') +
+            '<img loading="lazy" alt="">' + '</figure>';
+          var el = a.querySelector('img'); el.src = img; el.alt = alt;
+          grid.appendChild(a);
+        });
+      })
+      .catch(function(){});
+  })();
+
+  // Video v pozadí sekcie Coaching: verzia podľa šírky obrazovky, spustí sa až keď je sekcia blízko
+  var v = document.querySelector('.coaching .bg-video');
+  if (v && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var vio = new IntersectionObserver(function(entries){
+      if (!entries[0].isIntersecting) { if (v.src) v.pause(); return; }
+      if (!v.src) {
+        v.src = window.matchMedia('(min-width: 900px)').matches ? v.dataset.desktop : v.dataset.mobile;
+        v.onerror = function(){ v.style.display = 'none'; };
+      }
+      v.play().catch(function(){});
+    }, {rootMargin: '200px 0px'});
+    vio.observe(v);
+  }
+</script>
+
+</body>
+</html>
