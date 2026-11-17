@@ -45,9 +45,11 @@
   .btn-outline-dark{border:1px solid var(--ink);color:var(--ink)}
 
   /* HERO – M1: full-screen photo, dark band at bottom */
-  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:0;background:#2a2a2e}
-  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
-  .hero-band{position:relative;width:100%;background:rgba(11,11,12,.82);padding:22px 22px calc(22px + env(safe-area-inset-bottom))}
+  /* HERO mobil: fotka (Higgsfield outpaint 9:16) sa spodkom rozpúšťa do čiernej, text pod ňou */
+  .hero{position:relative;padding:0;background:var(--deep)}
+  .hero picture{display:block}
+  .hero img{display:block;width:100%;height:auto;max-height:74svh;object-fit:cover;object-position:center top;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%)}
+  .hero-band{position:relative;z-index:2;width:100%;margin-top:-72px;padding:0 22px 44px}
   .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,10vw,64px);line-height:1.02;margin:8px 0 6px}
   .hero .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(17px,4.6vw,22px);color:var(--accent);margin-bottom:18px}
 
@@ -126,12 +128,11 @@
     section{padding:72px 0}
     .results .wrap::after{margin-top:56px}
     .about,.contact{padding-top:48px}
-    .hero{align-items:center}
-    .hero img{left:auto;right:0;width:50%;object-position:center 20%}
-    /* plynulý prechod fotky do čiernej: ľavý okraj a spodok sa rozpúšťajú */
-    .hero{background:var(--deep)}
-    .hero img{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%),linear-gradient(to top,transparent 0,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 38%),linear-gradient(to top,transparent 0,#000 22%);mask-composite:intersect}
-    .hero-band{width:50%;max-width:none;margin:0;padding:0 56px 0 max(56px,calc((100vw - 1080px)/2));background:transparent}
+    .hero{min-height:100svh;display:flex;align-items:center}
+    /* desktop: široká fotka (Higgsfield outpaint 16:9) cez celú šírku, vľavo a dole sa rozpúšťa do čiernej */
+    .hero picture{position:absolute;inset:0}
+    .hero img{position:absolute;top:0;bottom:0;left:auto;right:0;width:72%;height:100%;max-height:none;object-position:50% 30%;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 22%);mask-composite:intersect}
+    .hero-band{width:50%;max-width:none;margin:0;z-index:2;padding:0 56px 0 max(56px,calc((100vw - 1080px)/2));background:transparent}
     .hero-band::after{content:"";display:block;width:56px;height:2px;background:var(--accent);margin-top:28px}
     .btns{grid-template-columns:auto auto;justify-content:start}
     .btn{min-width:170px}
@@ -155,7 +156,10 @@
 
 <!-- 1. ÚVOD -->
 <header class="hero">
-  <img src="images/hero.jpg" alt="Ján Szilágyi, natural bodybuilder" fetchpriority="high" onerror="this.style.display='none'">
+  <picture>
+    <source media="(min-width:900px)" srcset="images/hero-wide.jpg">
+    <img src="images/hero-mobile.jpg" alt="Ján Szilágyi, natural bodybuilder" fetchpriority="high">
+  </picture>
   <div class="hero-band">
     <span class="label">Dubai, UAE</span>
     <h1>Ján Szilágyi</h1>
