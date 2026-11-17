@@ -126,8 +126,11 @@
     section{padding:72px 0}
     .results .wrap::after{margin-top:56px}
     .about,.contact{padding-top:48px}
-    .hero{background:var(--black);align-items:center}
+    .hero{align-items:center}
     .hero img{left:auto;right:0;width:50%;object-position:center 20%}
+    /* plynulý prechod fotky do čiernej: ľavý okraj a spodok sa rozpúšťajú */
+    .hero{background:var(--deep)}
+    .hero img{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%),linear-gradient(to top,transparent 0,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 38%),linear-gradient(to top,transparent 0,#000 22%);mask-composite:intersect}
     .hero-band{width:50%;max-width:none;margin:0;padding:0 56px 0 max(56px,calc((100vw - 1080px)/2));background:transparent}
     .hero-band::after{content:"";display:block;width:56px;height:2px;background:var(--accent);margin-top:28px}
     .btns{grid-template-columns:auto auto;justify-content:start}
