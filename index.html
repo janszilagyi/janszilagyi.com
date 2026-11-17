@@ -128,7 +128,6 @@
 
   /* MOBIL – úvod: bez „Dubai, UAE“, meno na stred, slogan cez celú šírku */
   @media (max-width:899px){
-    .hero-band .label{display:none}
     .hero-band{margin-top:-44px} /* meno nezasahuje do rúk na fotke */
     .hero h1{text-align:center}
     .hero .tagline{text-align:justify;text-align-last:justify}
@@ -145,6 +144,9 @@
     .hero picture{position:absolute;inset:0}
     .hero img{position:absolute;top:0;bottom:0;left:auto;right:0;width:72%;height:100%;max-height:none;object-position:50% 30%;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 22%);mask-composite:intersect}
     .hero-band{width:50%;max-width:none;margin:0;z-index:2;padding:0 56px 0 max(56px,calc((100vw - 1080px)/2));background:transparent}
+    /* slogan presne na šírku dvoch tlačidiel (2 × 170 px + 10 px medzera) */
+    .hero .btn{width:170px}
+    .hero .tagline{width:350px;text-align:justify;text-align-last:justify}
     .hero-band::after{content:"";display:block;width:56px;height:2px;background:var(--accent);margin-top:28px}
     .btns{grid-template-columns:auto auto;justify-content:start}
     .btn{min-width:170px}
@@ -173,7 +175,6 @@
     <img src="images/hero-mobile.jpg" alt="Ján Szilágyi, natural bodybuilder" fetchpriority="high">
   </picture>
   <div class="hero-band">
-    <span class="label">Dubai, UAE</span>
     <h1>Ján Szilágyi</h1>
     <p class="tagline">Discipline. System. Results.</p>
     <div class="btns">
