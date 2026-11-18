@@ -142,7 +142,7 @@
     .hero{min-height:90svh;display:flex;align-items:center}
     /* desktop: široká fotka (Higgsfield outpaint 16:9) cez celú šírku, vľavo a dole sa rozpúšťa do čiernej */
     .hero picture{position:absolute;inset:0}
-    .hero img{position:absolute;top:0;bottom:0;left:auto;right:0;width:72%;height:100%;max-height:none;object-position:50% 30%;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 22%);mask-composite:intersect}
+    .hero img{position:absolute;top:0;bottom:0;left:auto;right:max(4vw,calc((100vw - 1180px)/2));width:auto;height:100%;max-height:none;aspect-ratio:1100/1675;object-fit:cover;object-position:center top} /* okraje fotky sú zapečené do čiernej priamo v obrázku */ /* rovnaká fotka ako na mobile, posunutá doprava */
     .hero-band{width:50%;max-width:none;margin:0;z-index:2;padding:0 56px 0 max(56px,calc((100vw - 1080px)/2));background:transparent}
     /* slogan presne na šírku dvoch tlačidiel (2 × 170 px + 10 px medzera) */
     /* rovnaké rozloženie ako na mobile: blok 500 px – meno na stred, slogan a tlačidlá na celú šírku bloku */
@@ -173,7 +173,7 @@
 <!-- 1. ÚVOD -->
 <header class="hero">
   <picture>
-    <source media="(min-width:900px)" srcset="images/hero-wide.jpg">
+    <source media="(min-width:900px)" srcset="images/hero-desktop.jpg">
     <img src="images/hero-mobile.jpg" alt="Ján Szilágyi, natural bodybuilder" fetchpriority="high">
   </picture>
   <div class="hero-band">
