@@ -31,8 +31,7 @@
   .serif{font-family:var(--serif)}
   .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 22px}
   section{padding:44px 0} /* jednotný rytmus: 44 px nad aj pod každou šampanskou linkou */
-  .results{padding-bottom:0} /* nasleduje tmavý Coaching – oddeľuje ich šampanská linka */
-  .results .wrap::after{content:"";display:block;height:1px;background:rgba(191,164,116,.6);margin-top:44px}
+  .results{padding-top:0} /* poradie: Úvod → Coaching → About → Results → Contact */
   .about p:last-child{margin-bottom:0}
   .about,.contact{padding-top:0} /* linka je hneď na začiatku sekcie */
 
@@ -87,7 +86,7 @@
   /* ABOUT */
   /* ABOUT – tmavá ako zvyšok webu; sekcie oddeľuje šampanská linka */
   .about{background:var(--deep);color:var(--white)}
-  .about .wrap::before,.contact .wrap::before{content:"";display:block;height:1px;background:rgba(191,164,116,.6);margin-bottom:44px}
+  .about .wrap::before,.results .wrap::before,.contact .wrap::before{content:"";display:block;height:1px;background:rgba(191,164,116,.6);margin-bottom:44px}
   .about .label{color:var(--accent)}
   .about p{font-family:var(--serif);font-size:clamp(19px,4.8vw,22px);line-height:1.5;color:rgba(255,255,255,.82);margin-bottom:14px;max-width:660px} /* texty v Bodoni ako piliere Coachingu */
   .about p:first-of-type{font-size:clamp(22px,5.6vw,28px);line-height:1.35}
@@ -138,9 +137,8 @@
   /* DESKTOP */
   @media (min-width:900px){
     section{padding:56px 0}
-    .results .wrap::after{margin-top:56px}
     .about,.contact{padding-top:0}
-    .about .wrap::before,.contact .wrap::before{margin-bottom:56px}
+    .about .wrap::before,.results .wrap::before,.contact .wrap::before{margin-bottom:56px}
     .hero{min-height:90svh;display:flex;align-items:center}
     /* desktop: široká fotka (Higgsfield outpaint 16:9) cez celú šírku, vľavo a dole sa rozpúšťa do čiernej */
     .hero picture{position:absolute;inset:0}
@@ -191,6 +189,55 @@
 
 <main>
 <!-- 2. VÝSLEDKY -->
+<section class="coaching" id="coaching">
+  <!-- Higgsfield slučky: video/coaching-loop-mobile.mp4 (9:16) a video/coaching-loop-desktop.mp4 (16:9), bez zvuku -->
+  <video class="bg-video" muted loop playsinline preload="none" aria-hidden="true"
+         data-mobile="video/coaching-loop-mobile.mp4" data-desktop="video/coaching-loop-desktop.mp4"></video>
+  <div class="wrap">
+    <span class="label">Coaching</span>
+    <h2>How I work.</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>DISCIPLINE</h3>
+        <p>Consistency beats intensity. Habits that hold up in your busiest weeks, not just the easy ones.</p>
+      </div>
+      <div class="pillar">
+        <h3>SYSTEM</h3>
+        <p>One plan, built for one person. Training, food and recovery that fit your life, not an internet template.</p>
+      </div>
+      <div class="pillar">
+        <h3>RESULTS</h3>
+        <p>Natural progress you can measure and keep, because you learn how to do it yourself.</p>
+      </div>
+    </div>
+    <!-- ponuka coachingu (18. 11. 2026 – zladené s IG bio, bez cien) -->
+    <div class="pillars offers">
+      <div class="pillar">
+        <h3>1:1 COACHING · DUBAI</h3>
+        <p>In person, in Dubai. We train together and build your system step by step.</p>
+      </div>
+      <div class="pillar">
+        <h3>ONLINE COACHING · WORLDWIDE</h3>
+        <p>Wherever you train. Your plan and your progress, guided by me online.</p>
+      </div>
+    </div>
+    <a class="link-cta" href="https://wa.me/971586023655?text=Hi%20J%C3%A1n%2C%20I%27m%20interested%20in%20coaching." target="_blank" rel="noopener">Start your coaching on WhatsApp →</a>
+  </div>
+</section>
+
+<!-- 3. COACHING -->
+<section class="about" id="about">
+  <div class="wrap">
+    <span class="label">About</span>
+    <h2>Ján Szilágyi</h2>
+    <p>I compete in natural bodybuilding, so every result I have is <em>earned the long way</em>.</p>
+    <p>Since 2019 I've coached people one-to-one, from complete beginners to performance-focused clients.</p>
+    <p>In 2026 I brought that discipline from Slovakia to Dubai.</p>
+    <p>I don't want clients who depend on me. I want them to own the system.</p>
+  </div>
+</section>
+
+<!-- 4. O MNE -->
 <section class="results" id="results">
   <div class="wrap">
     <span class="label">Results</span>
@@ -238,55 +285,6 @@
       <a href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener"><figure><img src="images/ig-6.jpg" alt="Morning walk in Dubai during peak week" loading="lazy"></figure></a>
     </div>
     <a class="btn btn-primary ig-follow" href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener">Follow @jan_szilagyi</a>
-  </div>
-</section>
-
-<!-- 3. COACHING -->
-<section class="coaching" id="coaching">
-  <!-- Higgsfield slučky: video/coaching-loop-mobile.mp4 (9:16) a video/coaching-loop-desktop.mp4 (16:9), bez zvuku -->
-  <video class="bg-video" muted loop playsinline preload="none" aria-hidden="true"
-         data-mobile="video/coaching-loop-mobile.mp4" data-desktop="video/coaching-loop-desktop.mp4"></video>
-  <div class="wrap">
-    <span class="label">Coaching</span>
-    <h2>How I work.</h2>
-    <div class="pillars">
-      <div class="pillar">
-        <h3>DISCIPLINE</h3>
-        <p>Consistency beats intensity. Habits that hold up in your busiest weeks, not just the easy ones.</p>
-      </div>
-      <div class="pillar">
-        <h3>SYSTEM</h3>
-        <p>One plan, built for one person. Training, food and recovery that fit your life, not an internet template.</p>
-      </div>
-      <div class="pillar">
-        <h3>RESULTS</h3>
-        <p>Natural progress you can measure and keep, because you learn how to do it yourself.</p>
-      </div>
-    </div>
-    <!-- ponuka coachingu (18. 11. 2026 – zladené s IG bio, bez cien) -->
-    <div class="pillars offers">
-      <div class="pillar">
-        <h3>1:1 COACHING · DUBAI</h3>
-        <p>In person, in Dubai. We train together and build your system step by step.</p>
-      </div>
-      <div class="pillar">
-        <h3>ONLINE COACHING · WORLDWIDE</h3>
-        <p>Wherever you train. Your plan and your progress, guided by me online.</p>
-      </div>
-    </div>
-    <a class="link-cta" href="https://wa.me/971586023655?text=Hi%20J%C3%A1n%2C%20I%27m%20interested%20in%20coaching." target="_blank" rel="noopener">Start your coaching on WhatsApp →</a>
-  </div>
-</section>
-
-<!-- 4. O MNE -->
-<section class="about" id="about">
-  <div class="wrap">
-    <span class="label">About</span>
-    <h2>Ján Szilágyi</h2>
-    <p>I compete in natural bodybuilding, so every result I have is <em>earned the long way</em>.</p>
-    <p>Since 2019 I've coached people one-to-one, from complete beginners to performance-focused clients.</p>
-    <p>In 2026 I brought that discipline from Slovakia to Dubai.</p>
-    <p>I don't want clients who depend on me. I want them to own the system.</p>
   </div>
 </section>
 
