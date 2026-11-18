@@ -51,7 +51,8 @@
   .hero img{display:block;width:100%;height:auto;max-height:74svh;object-fit:cover;object-position:center top;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%)}
   .hero-band{position:relative;z-index:2;width:100%;margin-top:-72px;padding:0 22px 8px}
   .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,10vw,64px);line-height:1.02;margin:8px 0 6px}
-  .hero .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(17px,4.6vw,22px);color:var(--accent);margin-bottom:18px}
+  .hero .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(17px,4.6vw,22px);color:var(--accent);margin-bottom:18px;white-space:nowrap;line-height:1.2}
+  .hero .tagline span{display:inline-block} /* veľkosť dorovná skript na celú šírku */
 
   /* RESULTS */
   .results{background:var(--deep)}
@@ -130,7 +131,6 @@
   @media (max-width:899px){
     .hero-band{margin-top:-44px} /* meno nezasahuje do rúk na fotke */
     .hero h1{text-align:center}
-    .hero .tagline{text-align:justify;text-align-last:justify}
   }
 
   /* DESKTOP */
@@ -146,7 +146,7 @@
     .hero-band{width:50%;max-width:none;margin:0;z-index:2;padding:0 56px 0 max(56px,calc((100vw - 1080px)/2));background:transparent}
     /* slogan presne na šírku dvoch tlačidiel (2 × 170 px + 10 px medzera) */
     .hero .btn{width:170px}
-    .hero .tagline{width:350px;text-align:justify;text-align-last:justify}
+    .hero .tagline{width:350px}
     .hero-band::after{content:"";display:block;width:56px;height:2px;background:var(--accent);margin-top:28px}
     .btns{grid-template-columns:auto auto;justify-content:start}
     .btn{min-width:170px}
@@ -176,7 +176,7 @@
   </picture>
   <div class="hero-band">
     <h1>Ján Szilágyi</h1>
-    <p class="tagline">Discipline. System. Results.</p>
+    <p class="tagline"><span>Discipline. System. Results.</span></p>
     <div class="btns">
       <a class="btn btn-primary" href="https://wa.me/971586023655?text=Hi%20J%C3%A1n%2C%20I%20found%20you%20on%20your%20website." target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn btn-outline" href="https://instagram.com/jan_szilagyi" target="_blank" rel="noopener">Instagram</a>
@@ -339,5 +339,11 @@
   }
 </script>
 
+<script>
+/* slogan: slová idú za sebou, písmo sa zväčší presne na šírku tlačidiel */
+(function(){var p=document.querySelector('.hero .tagline'),s=p&&p.firstElementChild;if(!s)return;
+function fit(){s.style.fontSize='20px';var w=s.getBoundingClientRect().width;if(w)s.style.fontSize=(20*p.clientWidth/w*0.995)+'px';}
+fit();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);addEventListener('resize',fit);})();
+</script>
 </body>
 </html>
