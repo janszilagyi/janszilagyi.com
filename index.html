@@ -55,7 +55,7 @@
 
   /* RESULTS */
   .results{background:var(--deep)}
-  .results h2,.coaching h2,.about h2,.contact h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,7vw,44px);line-height:1.1;margin:10px 0 28px}
+  .results h2,.coaching h2,.standard h2,.about h2,.contact h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,7vw,44px);line-height:1.1;margin:10px 0 28px}
   .result{border-top:1px solid rgba(191,164,116,.35);padding:18px 0}
   .result:last-of-type{border-bottom:1px solid rgba(191,164,116,.35)}
   .result .title{font-family:var(--serif);font-size:clamp(24px,6vw,32px);color:var(--accent);line-height:1.15}
@@ -86,10 +86,18 @@
   .offers .pillar{border-top-color:rgba(191,164,116,.45)}
   .link-cta{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-size:16px;font-weight:500;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:3px}
 
+  /* THE STANDARD – články (blok hneď za Coaching) */
+  .standard{background:var(--deep);padding-top:0}
+  .post-card{display:block;text-decoration:none;border-top:1px solid rgba(191,164,116,.45);padding-top:22px;max-width:760px}
+  .post-meta{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);font-weight:500}
+  .post-title{font-family:var(--serif);font-weight:600;font-size:clamp(26px,6.6vw,38px);line-height:1.15;margin:10px 0 12px;transition:color .3s}
+  .post-card:hover .post-title{color:var(--accent)}
+  .post-excerpt{font-family:var(--serif);font-size:clamp(19px,4.8vw,22px);line-height:1.5;color:rgba(255,255,255,.82)}
+
   /* ABOUT */
   /* ABOUT – tmavá ako zvyšok webu; sekcie oddeľuje šampanská linka */
   .about{background:var(--deep);color:var(--white)}
-  .about .wrap::before,.results .wrap::before,.contact .wrap::before{content:"";display:block;height:1px;background:rgba(191,164,116,.6);margin-bottom:44px}
+  .standard .wrap::before,.about .wrap::before,.results .wrap::before,.contact .wrap::before{content:"";display:block;height:1px;background:rgba(191,164,116,.6);margin-bottom:44px}
   .about .label{color:var(--accent)}
   .about p{font-family:var(--serif);font-size:clamp(19px,4.8vw,22px);line-height:1.5;color:rgba(255,255,255,.82);margin-bottom:14px;max-width:660px} /* texty v Bodoni ako piliere Coachingu */
   .about p:first-of-type{font-size:clamp(22px,5.6vw,28px);line-height:1.35}
@@ -141,7 +149,8 @@
   @media (min-width:900px){
     section{padding:56px 0}
     .about,.contact{padding-top:0}
-    .about .wrap::before,.results .wrap::before,.contact .wrap::before{margin-bottom:56px}
+    .standard .wrap::before,.about .wrap::before,.results .wrap::before,.contact .wrap::before{margin-bottom:56px}
+    .standard{padding-top:0}
     .hero{min-height:90svh;display:flex;align-items:center}
     /* desktop: široká fotka (Higgsfield outpaint 16:9) cez celú šírku, vľavo a dole sa rozpúšťa do čiernej */
     .hero picture{position:absolute;inset:0}
@@ -228,6 +237,20 @@
   </div>
 </section>
 
+<!-- 3. THE STANDARD (články) -->
+<section class="standard" id="the-standard">
+  <div class="wrap">
+    <span class="label">The Standard</span>
+    <h2>Raise the standard.</h2>
+    <a class="post-card" href="the-standard/every-rep-every-meal-planned/">
+      <span class="post-meta">Discipline · 3 min read</span>
+      <h3 class="post-title">Every rep, every meal, every hour of sleep: planned.</h3>
+      <p class="post-excerpt">People ask me how I stay disciplined. The honest answer: I don't rely on discipline alone. I rely on a plan.</p>
+    </a>
+    <a class="link-cta" href="the-standard/every-rep-every-meal-planned/">Read the article →</a>
+  </div>
+</section>
+
 <!-- 3. COACHING -->
 <section class="about" id="about">
   <div class="wrap">
@@ -310,7 +333,7 @@
 
 <script>
   // Plynulé zjavenie obsahu pri scrollovaní
-  document.querySelectorAll('section h2, section .label, .result, .gallery figure, .pillar, .link-cta, .about p, .contact .btns, .contact .email')
+  document.querySelectorAll('section h2, section .label, .post-card, .result, .gallery figure, .pillar, .link-cta, .about p, .contact .btns, .contact .email')
     .forEach(function(el){ el.classList.add('reveal'); });
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){

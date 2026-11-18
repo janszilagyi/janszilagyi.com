@@ -1,0 +1,56 @@
+/* THE STANDARD – spoločný vzhľad pre stránku rubriky a články (rovnaký dizajn ako hlavná stránka) */
+:root{
+  --black:#000000; --white:#FFFFFF; --accent:#BFA474; --soft:#C9C9CC;
+  --line:rgba(191,164,116,.6);
+  --serif:'Bodoni Moda', Georgia, serif;
+  --sans:'Inter', system-ui, -apple-system, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:100%;max-width:760px;margin:0 auto;padding:0 22px}
+.label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:500;text-decoration:none}
+
+/* Horná lišta: meno → domov, rubrika */
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.topbar .home{font-family:var(--serif);font-weight:600;font-size:20px;text-decoration:none}
+.topbar .label:hover,.topbar .home:hover{color:var(--accent)}
+
+/* Stránka rubriky */
+.intro{padding:44px 0 28px}
+.intro h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,8vw,52px);line-height:1.08;margin:10px 0 14px}
+.intro p{font-family:var(--serif);font-size:clamp(19px,4.8vw,22px);line-height:1.5;color:rgba(255,255,255,.82)}
+.post-card{display:block;text-decoration:none;border-top:1px solid rgba(191,164,116,.45);padding:22px 0 26px}
+.post-card:last-of-type{border-bottom:1px solid rgba(191,164,116,.45)}
+.post-meta{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);font-weight:500}
+.post-title{font-family:var(--serif);font-weight:600;font-size:clamp(26px,6.6vw,38px);line-height:1.15;margin:10px 0 12px;transition:color .3s}
+.post-card:hover .post-title{color:var(--accent)}
+.post-excerpt{font-family:var(--serif);font-size:clamp(19px,4.8vw,22px);line-height:1.5;color:rgba(255,255,255,.82)}
+.link-cta{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:500;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:3px}
+
+/* Článok */
+.article{padding:44px 0}
+.article h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,8.4vw,56px);line-height:1.08;margin:12px 0 30px}
+.article h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,6.4vw,34px);line-height:1.15;margin:44px 0 16px}
+.article p{font-family:var(--serif);font-size:clamp(19px,4.8vw,22px);line-height:1.6;color:rgba(255,255,255,.86);margin-bottom:18px}
+.article .lead{font-size:clamp(22px,5.6vw,28px);line-height:1.4;color:var(--white)}
+.article em{color:var(--accent)}
+.article .motto{font-style:italic;color:var(--accent);font-size:clamp(22px,5.6vw,28px);line-height:1.35;margin:40px 0 0}
+
+/* Výzva na konci článku */
+.cta{border-top:1px solid var(--line);padding:44px 0;text-align:center}
+.cta h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,7vw,44px);line-height:1.1;margin:10px 0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:6px;font-size:15px;font-weight:500;text-decoration:none;background:var(--accent);color:#0B0B0C;transition:opacity .2s;width:100%;max-width:420px}
+.btn:hover{opacity:.85}
+.cta .back-wrap{margin-top:26px}
+
+footer{border-top:1px solid var(--line);color:#8a8a8f;font-size:13px;text-align:center;padding:26px 22px calc(26px + env(safe-area-inset-bottom))}
+footer a{color:inherit;text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+@media (min-width:900px){
+  .intro,.article{padding:56px 0}
+  .cta{padding:56px 0}
+  .btn{width:auto;min-width:260px}
+}
